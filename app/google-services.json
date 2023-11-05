@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "66622865927",
+    "project_id": "friendlychallengetime",
+    "storage_bucket": "friendlychallengetime.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66622865927:android:4b43252a5e51152418e0a2",
+        "android_client_info": {
+          "package_name": "com.mangosociety.friendlychallengetime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRJajePrX_r0DmTi3HX4h35V-mf7tGdQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

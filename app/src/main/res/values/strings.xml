@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">FriendlyChallengeTime</string>
+
+    <string name="sign_in_header">Вход</string>
+    <string name="sign_in_btn">войти</string>
+    <string name="sign_in_btn_sign_up">зарегистрироваться</string>
+    <string name="sign_in_recovery_password">забыли пароль?</string>
+
+    <string name="sign_up_header">Регистрация</string>
+    <string name="sign_up_input_fio">введите фио</string>
+    <string name="sign_up_input_nickname">как вас будут звать</string>
+    <string name="sign_up_input_gender">выберите пол(муж, жен, другой)</string>
+    <string name="sign_up_input_phone">введите номер телефона</string>
+    <string name="sign_up_input_email">введите электронную почту</string>
+    <string name="sign_up_input_country">из какой вы страны</string>
+    <string name="sign_up_input_city">в каком городе хотите играть</string>
+    <string name="sign_up_input_birthday">а когда у вас день рождения</string>
+    <string name="sign_up_btn_next">далее</string>
+    <string name="sign_up_btn_back">назад</string>
+
+    <string name="questioning_header">Анкета</string>
+    <string name="questioning_type_music">Любимый жанр музыки</string>
+    <string name="questioning_classic">классика</string>
+    <string name="questioning_rock">рок</string>
+    <string name="questioning_rap">рэп</string>
+    <string name="questioning_guitar">песни под гитару</string>
+    <string name="questioning_pop">поп</string>
+    <string name="questioning_custom">свой вариант</string>
+    <string name="questioning_next">далее</string>
+    <string name="questioning_skip">пропустить</string>
+    <string name="questioning_type_food">Любимая еда</string>
+    <string name="questioning_food_home">домашняя</string>
+    <string name="questioning_food_fast">фастфуд</string>
+    <string name="questioning_food_vegan">вегатарианская</string>
+    <string name="questioning_food_asian">азиатская</string>
+    <string name="questioning_food_italy">итальянская</string>
+    <string name="questioning_food_custom">свой вариант</string>
+
+    <string name="home_header">Главная</string>
+</resources>
