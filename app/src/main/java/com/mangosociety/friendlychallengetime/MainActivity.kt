@@ -21,7 +21,7 @@ import com.arkivanov.decompose.defaultComponentContext
 import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
 import com.mangosociety.friendlychallengetime.shared.di.initKoin
 import com.mangosociety.friendlychallengetime.shared.ui.root.RootContentShared
-import com.mangosociety.friendlychallengetime.shared.ui.theme.BakgroundColor
+import com.mangosociety.friendlychallengetime.shared.ui.theme.BackgroundColor
 import com.mangosociety.friendlychallengetime.ui.theme.FriendlyChallengeTimeTheme
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.stopKoin
@@ -29,9 +29,6 @@ import org.koin.core.context.stopKoin
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        val root = DefaultRootComponent(componentContext = defaultComponentContext())
-
-//        val backgroundArgb = Color(0xFFF19 window, false)
 
         val rootComponent = com.mangosociety.friendlychallengetime.shared.ui.root.DefaultRootComponent(
             componentContext = defaultComponentContext(),
@@ -47,15 +44,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             FriendlyChallengeTimeTheme {
 
-                val statusBarColor by remember { mutableStateOf(BakgroundColor) }
-
-                // Получите доступ к контексту активности
+                val statusBarColor by remember { mutableStateOf(BackgroundColor) }
                 val context = LocalContext.current
-
-                // Создайте SystemUiController
                 val systemUiController = rememberUpdatedState(SystemUiController(context))
-
-                // Установите цвет статус-бара
                 LaunchedEffect(statusBarColor) {
                     systemUiController.value.setStatusBarColor(statusBarColor)
                 }

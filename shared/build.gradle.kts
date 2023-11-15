@@ -41,6 +41,9 @@ kotlin {
                     api(materialIconsExtended)
                 }
 
+                implementation(libs.ui.tooling)
+                implementation(libs.ui.tooling.preview)
+
                 api(libs.koin.core)
                 api(libs.koin.android)
 

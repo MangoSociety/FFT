@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS userVerifiedEntity (
+  email TEXT NOT NULL,
+  id TEXT NOT NULL PRIMARY KEY,
+  password TEXT NOT NULL
+);
+
+select:
+SELECT * FROM userVerifiedEntity;
+
+insert:
+INSERT OR REPLACE INTO userVerifiedEntity(email, id, password)
+VALUES ?;

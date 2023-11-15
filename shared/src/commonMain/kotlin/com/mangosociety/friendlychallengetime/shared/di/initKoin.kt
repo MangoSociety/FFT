@@ -8,8 +8,8 @@ fun initKoin(enableNetworkLogs: Boolean = false, appDeclaration: KoinAppDeclarat
     startKoin {
         appDeclaration()
         modules(
-            repositoryModule
-//            databaseModule,
+            repositoryModule,
+            databaseModule,
 //            networkModule(enableNetworkLogs),
 //            dataModule
         )

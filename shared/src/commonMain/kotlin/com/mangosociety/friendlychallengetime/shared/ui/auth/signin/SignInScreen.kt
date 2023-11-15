@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.sp
 import com.mangosociety.friendlychallengetime.shared.components.editfield.InputValidateField
 import com.mangosociety.friendlychallengetime.shared.ui.auth.signin.store.SignInComponent
 import com.mangosociety.friendlychallengetime.shared.ui.auth.signin.store.SignInStore
-import com.mangosociety.friendlychallengetime.shared.ui.theme.BakgroundColor
+import com.mangosociety.friendlychallengetime.shared.ui.theme.BackgroundColor
 
 @Composable
 internal fun SignInScreen(component: SignInComponent) {
@@ -55,7 +55,7 @@ internal fun SignInScreen(component: SignInComponent) {
         }
 
 
-        Box(modifier = Modifier.fillMaxSize().background(BakgroundColor).padding(paddingValues)) {
+        Box(modifier = Modifier.fillMaxSize().background(BackgroundColor).padding(paddingValues)) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
