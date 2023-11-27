@@ -23,11 +23,6 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Get Commit Messages
-      run: |
-        COMMIT_MESSAGES=$(git log --format=%B --no-merges ${GITHUB_SHA}^..${GITHUB_SHA})
-        echo "Commit Messages: $COMMIT_MESSAGES"
-
     - name: Build with Gradle
       run: |
         chmod +x gradlew
@@ -37,13 +32,13 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: fft.apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: app/build/outputs/apk/debug/FriendlyFT.apk  # Обновленное имя файла
 
     - name: Notify Telegram
       run: |
         curl -X POST \
           -F chat_id=-1001885273120 \
-          -F document=@app/build/outputs/apk/debug/app-debug.apk \
-          -F caption="New APK build is ready! Commit Messages: $COMMIT_MESSAGES" \
+          -F document=@app/build/outputs/apk/debug/FriendlyFT.apk  # Обновленное имя файла
+          -F caption="Йухуу! Обнова..." \
           https://api.telegram.org/bot6988107847:AAFuR3RayZU98vmb9jAJGIm1K1iBmrKGnY0/sendDocument
         # Replace YOUR_BOT_TOKEN with your actual Telegram bot token
