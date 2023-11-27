@@ -20,6 +20,11 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+    - name: Get Commit Messages
+      run: |
+        COMMIT_MESSAGES=$(git log --format=%B --no-merges ${GITHUB_SHA}^..${GITHUB_SHA})
+        echo "Commit Messages: $COMMIT_MESSAGES"
+
     - name: Build with Gradle
       run: |
         chmod +x gradlew
@@ -36,5 +41,6 @@ jobs:
         curl -X POST \
           -F chat_id=-1001885273120 \
           -F document=@app/build/outputs/apk/debug/app-debug.apk \
-          -F caption="New APK build is ready!" \
-          https://api.telegram.org/bot6988107847:AAFuR3RayZU98vmb9jAJGIm1K1iBmrKGnY0/sendDocument
+          -F caption="New APK build is ready! What is new... \n $COMMIT_MESSAGES" \
+          https://api.telegram.org/botYOUR_BOT_TOKEN/sendDocument
+        # Replace YOUR_BOT_TOKEN with your actual Telegram bot token
