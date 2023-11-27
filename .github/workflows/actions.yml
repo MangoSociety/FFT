@@ -38,6 +38,6 @@ jobs:
           -F document=@app/build/outputs/apk/debug/app-debug.apk \
           -F caption="New APK build is ready!" \
           https://api.telegram.org/bot \
-          ${{ 6988107847:AAFuR3RayZU98vmb9jAJGIm1K1iBmrKGnY0 }}/sendDocument
+          ${{ "6988107847:AAFuR3RayZU98vmb9jAJGIm1K1iBmrKGnY0" }}/sendDocument
       env:
-        TELEGRAM_BOT_TOKEN: ${{ 6988107847:AAFuR3RayZU98vmb9jAJGIm1K1iBmrKGnY0 }}
+        TELEGRAM_BOT_TOKEN: ${{ "6988107847:AAFuR3RayZU98vmb9jAJGIm1K1iBmrKGnY0" }}
