@@ -38,7 +38,7 @@ jobs:
       run: |
         curl -X POST \
           -F chat_id=-1001885273120 \
-          -F document=@app/build/outputs/apk/debug/FriendlyFT.apk  # Обновленное имя файла
+          -F document=@app/build/outputs/apk/debug/FriendlyFT.apk \
           -F caption="Йухуу! Обнова..." \
           https://api.telegram.org/bot6988107847:AAFuR3RayZU98vmb9jAJGIm1K1iBmrKGnY0/sendDocument
-        # Replace YOUR_BOT_TOKEN with your actual Telegram bot token
+
