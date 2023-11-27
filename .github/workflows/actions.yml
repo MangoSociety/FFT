@@ -32,13 +32,13 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: fft.apk
-        path: app/build/outputs/apk/debug/FriendlyFT.apk  # Обновленное имя файла
+        path: app/build/outputs/apk/debug/app-debug.apk  # Обновленное имя файла
 
     - name: Notify Telegram
       run: |
         curl -X POST \
           -F chat_id=-1001885273120 \
-          -F document=@app/build/outputs/apk/debug/FriendlyFT.apk \
+          -F document=@app/build/outputs/apk/debug/app-debug.apk \
           -F caption="Йухуу! Обнова..." \
           https://api.telegram.org/bot6988107847:AAFuR3RayZU98vmb9jAJGIm1K1iBmrKGnY0/sendDocument
 
