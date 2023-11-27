@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
       with:
         fetch-depth: 0  # Получаем полный исторический контекст
     - name: set up JDK 17
@@ -45,3 +46,4 @@ jobs:
           -F document=@app/build/outputs/apk/debug/app-debug.apk \
           -F caption="New APK build is ready! Commit Messages: $COMMIT_MESSAGES" \
           https://api.telegram.org/bot6988107847:AAFuR3RayZU98vmb9jAJGIm1K1iBmrKGnY0/sendDocument
+        # Replace YOUR_BOT_TOKEN with your actual Telegram bot token
