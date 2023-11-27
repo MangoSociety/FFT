@@ -29,9 +29,9 @@ internal class SignInStoreFactory(
             ) {}
 
     private sealed class Msg {
-        object SignInLoading : Msg()
-        object CorrectData : Msg()
-        object IncorrectData : Msg()
+        data object SignInLoading : Msg()
+        data object CorrectData : Msg()
+        data object IncorrectData : Msg()
     }
 
     private inner class ExecutorImpl :
@@ -50,26 +50,7 @@ internal class SignInStoreFactory(
                     signInProcess(intent.login, intent.password)
                 }
                 else -> {}
-//                is SignInStore.Intent
             }
-
-        private var loadPokemonInfoByNameJob: Job? = null
-        private fun loadPokemonInfoByName(name: String) {
-            if (loadPokemonInfoByNameJob?.isActive == true) return
-
-//            loadPokemonInfoByNameJob = scope.launch {
-//                dispatch(Msg.PokemonInfoLoading)
-//
-//                pokemonRepository
-//                    .getPokemonFlowByName(name)
-//                    .onSuccess { pokemonInfo ->
-//                        dispatch(Msg.PokemonInfoLoaded(pokemonInfo))
-//                    }
-//                    .onFailure { e ->
-//                        dispatch(Msg.PokemonInfoFailed(e.message))
-//                    }
-//            }
-        }
 
         private var signInJob: Job? = null
         private fun signInProcess(login: String, password: String) {
@@ -81,12 +62,6 @@ internal class SignInStoreFactory(
                 } else {
                     dispatch(Msg.IncorrectData)
                 }
-//                pokemonRepository.updatePokemonFavoriteState(
-//                    name = name,
-//                    isFavorite = isFavorite,
-//                )
-//
-//                dispatch(Msg.PokemonInfoFavoriteStateUpdated(isFavorite))
             }
         }
     }
@@ -94,10 +69,6 @@ internal class SignInStoreFactory(
     private object ReducerImpl: Reducer<SignInStore.State, Msg> {
         override fun SignInStore.State.reduce(msg: Msg): SignInStore.State =
             when (msg) {
-//                is Msg.PokemonInfoLoading -> DetailsStore.State(isLoading = true)
-//                is Msg.PokemonInfoLoaded -> DetailsStore.State(pokemonInfo = msg.pokemonInfo)
-//                is Msg.PokemonInfoFailed -> DetailsStore.State(error = msg.error)
-//                is Msg.PokemonInfoFavoriteStateUpdated -> copy(pokemonInfo = pokemonInfo?.copy(isFavorite = msg.isFavorite))
                 Msg.CorrectData -> copy(isSuccess = true, isLoading = false)
                 Msg.IncorrectData -> copy(isSuccess = false, isLoading = false)
                 Msg.SignInLoading -> SignInStore.State(isLoading = true)

@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mangosociety.friendlychallengetime.shared.components.editfield.BasicInputValidateField
 import com.mangosociety.friendlychallengetime.shared.components.editfield.InputValidateField
 import com.mangosociety.friendlychallengetime.shared.ui.auth.signin.store.SignInComponent
 import com.mangosociety.friendlychallengetime.shared.ui.auth.signin.store.SignInStore
@@ -73,14 +74,20 @@ internal fun SignInScreen(component: SignInComponent) {
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                InputValidateField(placeholders = "input email", onChangeData = { email = it }) { data ->
-                    return@InputValidateField data.contains("@")
+                BasicInputValidateField(
+                    placeholders = "input email",
+                    onChangeData = { email = it }
+                ) { data ->
+                    return@BasicInputValidateField data.contains("@")
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                InputValidateField(placeholders = "input password", onChangeData = { password = it }) { data ->
-                    return@InputValidateField data.count() > 5
+                BasicInputValidateField(
+                    placeholders = "input password",
+                    onChangeData = { password = it }
+                ) { data ->
+                    return@BasicInputValidateField data.count() > 5
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
